@@ -1,0 +1,31 @@
+ ...add-to-cart...
+{
+    "productId": "66bcaa67ed3b43bc99d68b7b",
+    "quantity": 2
+}
+
+
+....login..
+{
+  "email": "ikwuegbustephanie56@gmail.com",
+  "password": "Chideraa"
+}
+
+
+initiate payment...
+{ "amount": 500,
+  "currency": "USD",
+  "firstName": "Stephanie",
+  "lastName":"Star",
+  "email":"ikwuegbustephanie56@gmail.com",
+  "address":"tyijhygtfrdcvbnm",
+  "phone":"09876543"
+}
+
+
+..verify payment...
+http://localhost:3000/api/payment/verify?status=successful&tx_ref=a3379120-47a3-40f4-9785-4caadfa3f62e&transaction_id=6574710
+{
+  "transaction_id":"6574710",
+  "orderId": "a3379120-47a3-40f4-9785-4caadfa3f62e"
+}

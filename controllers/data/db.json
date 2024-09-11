@@ -1,0 +1,85 @@
+{
+    "products": [
+        {
+            "_id": {
+              "$oid": "66d78e0538c440c857df9580"
+            },
+            "category": {
+              "$oid": "66bca991dbebccf756f77cee"
+            },
+            "name": "Siloette Gold",
+            "price": 150,
+            "images": [
+              {
+                "img": "https://res.cloudinary.com/dvvn3crtj/image/upload/v1725402626/to3tfq8lbwhy9mjgmd65.jpg",
+                "_id": {
+                  "$oid": "66d78e0538c440c857df9581"
+                }
+              },
+              {
+                "img": "https://res.cloudinary.com/dvvn3crtj/image/upload/v1725402627/iig84f062sqcixq3gz8w.jpg",
+                "_id": {
+                  "$oid": "66d78e0538c440c857df9582"
+                }
+              },
+              {
+                "img": "https://res.cloudinary.com/dvvn3crtj/image/upload/v1725402628/zijeynfj53smk7gk5apc.jpg",
+                "_id": {
+                  "$oid": "66d78e0538c440c857df9583"
+                }
+              }
+            ],
+            "description": "Ladies Heels Elegant Sandals - Gold",
+            "featured": true,
+            "topSelling": false,
+            "createdAt": {
+              "$date": "2024-09-03T22:30:29.170Z"
+            },
+            "updatedAt": {
+              "$date": "2024-09-03T22:30:29.170Z"
+            },
+            "__v": 0
+          },
+
+          {
+            "_id": {
+              "$oid": "66d7902238c440c857df9597"
+            },
+            "category": {
+              "$oid": "66bca991dbebccf756f77cee"
+            },
+            "name": "forever 21",
+            "price": 100,
+            "images": [
+              {
+                "img": "https://res.cloudinary.com/dvvn3crtj/image/upload/v1725403168/bqxmmxbikw1eowop23ui.jpg",
+                "_id": {
+                  "$oid": "66d7902238c440c857df9598"
+                }
+              },
+              {
+                "img": "https://res.cloudinary.com/dvvn3crtj/image/upload/v1725403168/kodjajx6ovrr9ayxq7pc.jpg",
+                "_id": {
+                  "$oid": "66d7902238c440c857df9599"
+                }
+              },
+              {
+                "img": "https://res.cloudinary.com/dvvn3crtj/image/upload/v1725403169/ecwwdigskyzrl05mrenc.jpg",
+                "_id": {
+                  "$oid": "66d7902238c440c857df959a"
+                }
+              }
+            ],
+            "description": "Forever 21 Pointed Toe Court Shoes - Black",
+            "featured": true,
+            "topSelling": false,
+            "createdAt": {
+              "$date": "2024-09-03T22:39:30.160Z"
+            },
+            "updatedAt": {
+              "$date": "2024-09-03T22:39:30.160Z"
+            },
+            "__v": 0
+          }
+    ]
+}
