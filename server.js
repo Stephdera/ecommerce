@@ -13,7 +13,7 @@ connectDB()
 dotenv.config()
 
 app.use(cors({
-    origin:["http://localhost:5173", "http://localhost:5174", "*"],
+    origin:["http://localhost:5173", "http://localhost:5174", "https://vercel.com/stephanie1/star-stores", "*"],
     allowedHeaders: ["Content-Type", "Authorization", "auth-token"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     credentials: true
