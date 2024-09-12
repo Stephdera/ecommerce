@@ -14,6 +14,16 @@ create new user...
     "confirmPassword": "Starr785",
     "role": "client"
 }
+2nd user
+{
+    "firstName": "Steph",
+    "lastName": "Chidera",
+    "email": "star7856@gmail.com",
+    "phone": "123456789",
+    "password": "Starr7856",
+    "confirmPassword": "Starr7856",
+    "role": "client"
+}
 current login......
 {
     "email": "star785@gmail.com",
