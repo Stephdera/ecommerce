@@ -66,11 +66,11 @@ exports.createProduct = async (req, res) => {
 
 exports.getProduct = async (req, res) => {
     try {
-        const product = await Product.findById(req.params._id);
-        if (!product) {
+        const prod = await Product.findById(req.params._id);
+        if (!prod) {
             res.status(400).json({ message: "Product does not exist"})
         }
-        res.json(product)
+        res.json(prod)
     } catch (error) {
         console.log({ message: error.message})
     }
