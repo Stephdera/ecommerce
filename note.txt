@@ -44,3 +44,5 @@ http://localhost:3000/api/payment/verify?status=successful&tx_ref=a3379120-47a3-
   "transaction_id":"6574710",
   "orderId": "a3379120-47a3-40f4-9785-4caadfa3f62e"
 }
+
+productId "_id": "66e2d41ddf44ed8b6e08118e"
