@@ -21,9 +21,8 @@ exports.createCategory = async ( req, res ) => {
 }
 
 exports.getOneCategory =async (req, res ) => {
-    const { id } = req.body;
     try {
-        const category = await Category.findById(id);
+        const category = await Category.findById(req.category.id);
         if (!category) {
             res.status(400).json({ message: "Category doesn't exist"})
         }
