@@ -47,9 +47,22 @@ exports.register = async (req, res) => {
     }
 }
 
+// exports.getUser = async ( req, res) => {
+//     try {
+//         const user = await User.findById({ user: req.user.id});
+//         if (!user) {
+//             res.status(400).json({ message: "User does not exist"})
+//         }
+//         res.json(user)
+//     } catch (error) {
+//         console.log({ message: error.message})
+//     }
+// }
+
 exports.getUser = async ( req, res) => {
+    const {id } = req.body;
     try {
-        const user = await User.findById({ user: req.user.id});
+        const user = await User.findById( id );
         if (!user) {
             res.status(400).json({ message: "User does not exist"})
         }
