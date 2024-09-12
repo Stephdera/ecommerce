@@ -4,6 +4,21 @@
     "quantity": 2
 }
 
+create new user...
+{
+    "firstName": "Stephanie",
+    "lastName": "Chijioke",
+    "email": "star785@gmail.com",
+    "phone": "12345678",
+    "password": "Starr785",
+    "confirmPassword": "Starr785",
+    "role": "client"
+}
+current login......
+{
+    "email": "star785@gmail.com",
+    "password": "Starr785"
+}
 
 ....login..
 {
