@@ -61,7 +61,7 @@ exports.register = async (req, res) => {
 
 exports.getUser = async ( req, res) => {
     try {
-        const user = await User.findById(req.user.id);
+        const user = await User.findById(req.user.id).populate();
         if (!user) {
             res.status(400).json({ message: "User does not exist"})
         }
