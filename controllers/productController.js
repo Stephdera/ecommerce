@@ -64,7 +64,18 @@ exports.createProduct = async (req, res) => {
     }
 }
 
-
+exports.getProduct = async (req, res) => {
+    const productId = req.params.id
+    try {
+        const product = await Product.findById( productId);
+        if (!product) {
+            res.status(400).json({ message: "Product does not exist"})
+        }
+        res.json(product)
+    } catch (error) {
+        console.log({ message: error.message})
+    }
+}
 
 
 exports.getAllProduct = async (req, res ) => {
