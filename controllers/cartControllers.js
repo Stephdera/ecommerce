@@ -78,7 +78,7 @@ exports.updateCart = async (req, res) => {
 
 
 exports.deleteCartItem = async (req, res) => {
-    const { productId} = req.body;
+    const { productId } = req.body;
     try {
         const cart = await Cart.findOne({ user: req.user.id});
         const product = await Product.findById(productId);

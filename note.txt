@@ -24,6 +24,16 @@ create new user...
     "confirmPassword": "Starr7856",
     "role": "client"
 }
+3rd user{
+    "firstName": "Deborah",
+    "lastName": "Chinecherem",
+    "email": "star12345@gmail.com",
+    "phone": "123456789",
+    "password": "Star12345",
+    "confirmPassword": "Star12345",
+    "role": "client"
+}
+
 current login......
 {
     "email": "star785@gmail.com",

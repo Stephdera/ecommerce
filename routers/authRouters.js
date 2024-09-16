@@ -7,5 +7,6 @@ router.post("/api/register", authControllers.register)
 router.post("/api/login", authControllers.login)
 router.get("/api/user", auth, authControllers.getUser)
 router.get("/api/all-users", authControllers.getAllUsers)
+router.delete("/api/delete-user", authControllers.deleteUser)
 
 module.exports = router;

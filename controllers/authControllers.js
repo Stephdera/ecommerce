@@ -47,26 +47,15 @@ exports.register = async (req, res) => {
     }
 }
 
-// exports.getUser = async ( req, res) => {
-//     try {
-//         const user = await User.findById({ user: req.user.id});
-//         if (!user) {
-//             res.status(400).json({ message: "User does not exist"})
-//         }
-//         res.json(user)
-//     } catch (error) {
-//         console.log({ message: error.message})
-//     }
-// }
 
 exports.getUser = async ( req, res) => {
     // const { _id } = req.body;
     try {
-        const user = await User.findById(req.user.id).populate();
+        const user = await User.findById(req.user._id).populate();
         if (!user) {
             res.status(400).json({ message: "User does not exist"})
         }
-        res.json(user)
+        res.json(user);
     } catch (error) {
         console.log({ message: error.message })
     }
@@ -82,11 +71,25 @@ exports.getAllUsers = async ( req, res) => {
       }
 }
 
+
+exports.deleteUser = async ( req, res) => {
+    const { id } = req.body;
+    try {
+        const user = await User.findByIdAndDelete( id );
+        if (!user) {
+            return res.status(400).json({ message: "User not found"});
+        }
+        res.status(200).json({ message: "User has been Successfully deleted"});
+    } catch (error) {
+       console.log({ message: error.message});
+    }
+}
+
 exports.login = async (req, res) => {
     const { email, password } = req.body;
 
     try {
-        const user = await User.findOne({ email})
+        const user = await User.findOne({ email })
         if (!user) {
            return res.json("Invalid username").status(400)
         }

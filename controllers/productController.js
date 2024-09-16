@@ -86,3 +86,31 @@ exports.getAllProduct = async (req, res ) => {
         console.log({ message: error.message })
     }
 }
+
+
+exports.deleteProduct = async (req, res) => {
+    const { id } = req.body;
+    try {
+        const product = await Product.findByIdAndDelete( id );
+        if (!product) {
+            return res.status(400).json({ message: "Product not found"});
+        }
+        res.status(200).json({ message: "Product deleted successfully"});
+    } catch (error) {
+        console.log({ message: error.message});
+    }
+}
+
+
+exports.updateProduct = async (req, res) => {
+    const { id, updates } = req.body;
+    try {
+        const updatedProduct = await Product.findByIdAndUpdate( id, updates, {new:true});
+        if (!updatedProduct) {
+            return res.status(400).json({ message: "Product not found"});
+        }
+        res.status(200).json( updatedProduct );
+    } catch (error) {
+        console.log({ message: error.message});
+    }
+}
