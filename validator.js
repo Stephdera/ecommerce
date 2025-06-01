@@ -28,8 +28,8 @@ const userSchema = Joi.object({
     lastName: Joi.string().required(),
     email: Joi.string().required().email(),
     phone: Joi.string().required(),
-    password: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
-    confirmPassword: Joi.string().required().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')),
+    password: Joi.string().required(),
+    confirmPassword: Joi.string().required(),
     role: Joi.string().required(),
 })
 

@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 
 dotenv.config()
 
-
 const userSchema = new mongoose.Schema({
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
@@ -14,7 +13,6 @@ const userSchema = new mongoose.Schema({
     role: {type: String, enum: ["admin", "client"], default: "client"},
 })
  
-
 userSchema.methods.generateAuthToken = function () {
     const token = jwt.sign(
         {id: this._id, role:this.role},

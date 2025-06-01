@@ -28,7 +28,7 @@ const { validateProduct } = require("../validator");
 
 exports.createProduct = async (req, res) => {
     try {
-        const {error } = validateProduct(req.body)
+        const { error } = validateProduct(req.body)
         if (error ) res.json(error.details[0].message);
 
         if (!req.files || req.files.length === 0) {
@@ -42,7 +42,7 @@ exports.createProduct = async (req, res) => {
                 images.push({ img: result.secure_url });
             } catch (uploaderError) {
                 console.error("Image upload error:", uploaderError);
-                return res.status(500).json({ message: "Image upload failed", error: uploadError.message });
+                return res.status(500).json({ message: "Image upload failed", error: uploaderError.message });
             }
         }
         // const images = req.files.map(file => ({ img: file.path }));
@@ -81,7 +81,7 @@ exports.getProduct = async (req, res) => {
 exports.getAllProduct = async (req, res ) => {
     try {
         const products = await Product.find().populate("category")
-    res.json(products)
+        res.json(products)
     } catch (error) {
         console.log({ message: error.message })
     }

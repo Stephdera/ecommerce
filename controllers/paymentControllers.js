@@ -42,24 +42,24 @@ exports.initiatePayment = async (req, res) => {
               title: 'Star Stores Purchase',
               description: "Payment for cart items"
             }
-          }
+        }
 
-          const response = await fetch("https://api.flutterwave.com/v3/payments", {
+        const response = await fetch("https://api.flutterwave.com/v3/payments", {
             method: "POST",
             headers: {
                 Authorization: `Bearer ${FLW_SECRET_KEY}`,
                 'Content-Type': 'application/json'
               },
               body: JSON.stringify(paymentData)
-          });
+        });
 
-          const data = await response.json();
+        const data = await response.json();
 
-          if(data.status === "success") {
+        if(data.status === "success") {
             res.json({ link: data.data.link, orderId})
           }else {
             res.json("Payment failed")
-          }
+        }
     } catch (error) {
         console.log({ message: error.message})
     }
