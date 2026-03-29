@@ -10,7 +10,7 @@ exports.register = async (req, res) => {
     const { firstName, lastName, password, confirmPassword, email, phone, role } = req.body;
 
     if( password !== confirmPassword) {
-        return res.json("Password doesn't match")
+        return res.status(400).json({message:"Password doesn't match"})
     }
 
     let {error} = validateUser(req.body)
@@ -21,13 +21,16 @@ exports.register = async (req, res) => {
     try {
         let user = await User.findOne({email})
         if (user) {
-            return res.json("User already exists!...").status(400)
+            return res.status(400).json({message:"User already exists!..."})
         }
 
         user = new User({ firstName, lastName, password, confirmPassword, email, phone, role });
         const salt = await bcrypt.genSalt(10)
         user.password = await bcrypt.hash(user.password, salt)
         await user.save()
+
+        const token = user.generateAuthToken()
+        res.header("auth-token", token).json(user)
 
         const mailOption = {
             from: process.env.EMAIL_USER, // sender address
@@ -36,11 +39,12 @@ exports.register = async (req, res) => {
             text: "Hello Stephanie, thanks for signing up with Star Stores", // plain text body
         }
 
-        await transporter.sendMail(mailOption);
-
-
-        const token = user.generateAuthToken()
-        res.header("auth-token", token).json(user)
+        try {
+            await transporter.sendMail(mailOption);
+            console.log("Email sent successfully");
+        } catch (error) {
+           console.log({message: error.message}) 
+        }    
         
     } catch (error) {
         console.log({message: error.message})
